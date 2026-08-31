@@ -1,0 +1,601 @@
+# Instincts generated from https://github.com/WangNingkai/ChatGPT-Next-Web
+# Generated: 2026-07-06T07:32:05.697Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: ChatGPT-Next-Web-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: test, docs
+
+## Evidence
+
+- 44 commits analyzed
+- Detected conventional commit pattern
+- Examples: test: add unit tests for pure helpers in app/utils, docs: describe WHITE_WEBDAV_ENDPOINTS in .env.template
+
+---
+id: ChatGPT-Next-Web-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Commit Length
+
+## Action
+
+Write moderate-length commit messages (~54 characters)
+
+## Evidence
+
+- Average commit message length: 54 chars
+- Based on 44 commits
+
+---
+id: ChatGPT-Next-Web-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: ChatGPT-Next-Web-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: ChatGPT-Next-Web-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: ChatGPT-Next-Web-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: ChatGPT-Next-Web-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Test Framework
+
+## Action
+
+Use jest as the test framework
+
+## Evidence
+
+- Test framework detected: jest
+- File pattern: *.test.ts
+
+---
+id: ChatGPT-Next-Web-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: ChatGPT-Next-Web-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: no
+
+---
+id: ChatGPT-Next-Web-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~29x per month
+- Files: test/*, **/*.test.*
+
+---
+id: ChatGPT-Next-Web-workflow-add-unit-test-for-helper
+trigger: "when doing add unit test for helper"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Workflow Add Unit Test For Helper
+
+## Action
+
+Follow the add-unit-test-for-helper workflow:
+1. Identify a helper or utility function that lacks test coverage.
+2. Create a new test file named after the helper in the 'test/' directory (e.g., test/helper-name.test.ts).
+3. Write focused, additive unit tests covering all relevant branches and cases for the helper.
+4. Ensure no existing files are modified or removed.
+5. Verify tests pass locally (e.g., yarn test:ci).
+6. Commit the new test file with a descriptive message.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~15x per month
+- Files: test/*.test.ts
+
+---
+id: ChatGPT-Next-Web-workflow-document-env-var-in-template
+trigger: "when doing document env var in template"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Workflow Document Env Var In Template
+
+## Action
+
+Follow the document-env-var-in-template workflow:
+1. Identify an environment variable used in the code (e.g., in app/config/server.ts) that is missing from .env.template.
+2. Add the variable to .env.template with a descriptive comment.
+3. Ensure the comment is consistent with documentation elsewhere (e.g., README).
+4. Commit the change with a descriptive message.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: .env.template
+
+---
+id: ChatGPT-Next-Web-workflow-merge-pull-request-for-additive-test-or-doc
+trigger: "when doing merge pull request for additive test or doc"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/ChatGPT-Next-Web
+---
+
+# ChatGPT Next Web Workflow Merge Pull Request For Additive Test Or Doc
+
+## Action
+
+Follow the merge-pull-request-for-additive-test-or-doc workflow:
+1. Review the PR for a new, focused test or documentation addition.
+2. Ensure the PR only adds the new file and does not modify existing files (except .env.template for docs).
+3. Merge the PR with a summary message referencing the added test or documentation.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: test/*.test.ts, .env.template
+
+---
+id: chatgpt-next-web-instinct-file-naming
+trigger: "When creating a new file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct File Naming
+
+## Action
+
+Name the file using kebab-case (e.g., my-helper.ts)
+
+## Evidence
+
+- Pattern in namingConventions.files: kebab-case
+
+---
+id: chatgpt-next-web-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Function Naming
+
+## Action
+
+Name the function using camelCase (e.g., getTimeoutMSByModel)
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+- Seen in test: add unit tests for getTimeoutMSByModel and showPlugins
+
+---
+id: chatgpt-next-web-instinct-class-naming
+trigger: "When declaring a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase (e.g., WebDavClient)
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: chatgpt-next-web-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE (e.g., WHITE_WEBDAV_ENDPOINTS)
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+- Seen in docs: describe WHITE_WEBDAV_ENDPOINTS in .env.template
+
+---
+id: chatgpt-next-web-instinct-relative-imports
+trigger: "When importing modules within the project"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Relative Imports
+
+## Action
+
+Use relative import paths (e.g., import { helper } from '../utils/helper')
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: chatgpt-next-web-instinct-named-exports
+trigger: "When exporting functions, classes, or constants"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Named Exports
+
+## Action
+
+Use named exports (e.g., export function myFunc() {})
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: chatgpt-next-web-instinct-test-file-location
+trigger: "When adding a new test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Test File Location
+
+## Action
+
+Place the test file in the 'test/' directory, not alongside source files
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+- Files like test/utils.test.ts
+
+---
+id: chatgpt-next-web-instinct-test-file-naming
+trigger: "When naming a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Test File Naming
+
+## Action
+
+Use the pattern *.test.ts (e.g., utils.test.ts)
+
+## Evidence
+
+- Pattern in testing.filePattern: *.test.ts
+- Files like test/utils.test.ts
+
+---
+id: chatgpt-next-web-instinct-unit-test-coverage
+trigger: "When a helper or utility function lacks test coverage"
+confidence: 0.98
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Unit Test Coverage
+
+## Action
+
+Create a new test file named after the helper in the 'test/' directory and write focused, additive unit tests
+
+## Evidence
+
+- Workflow: add-unit-test-for-helper
+- Commits: test: add unit tests for pure helpers in app/utils
+
+---
+id: chatgpt-next-web-instinct-no-modify-existing-files-in-tests
+trigger: "When adding a new unit test for a helper"
+confidence: 0.95
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct No Modify Existing Files In Tests
+
+## Action
+
+Ensure no existing files are modified or removed; only add new test files
+
+## Evidence
+
+- Workflow: add-unit-test-for-helper
+- Commit sequence: Ensure no existing files are modified or removed
+
+---
+id: chatgpt-next-web-instinct-test-framework
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Test Framework
+
+## Action
+
+Use Jest as the testing framework
+
+## Evidence
+
+- Pattern in testing.framework: jest
+
+---
+id: chatgpt-next-web-instinct-commit-format
+trigger: "When making a commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Commit Format
+
+## Action
+
+Use conventional commit prefixes such as 'test:' or 'docs:' followed by a short, descriptive message
+
+## Evidence
+
+- Pattern in commits.prefixes: test, docs
+- Examples: test: add unit tests for pure helpers in app/utils
+
+---
+id: chatgpt-next-web-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, averaging around 54 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 54
+
+---
+id: chatgpt-next-web-instinct-add-unit-test-workflow
+trigger: "When someone wants to add or improve unit test coverage for a helper or utility function"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Add Unit Test Workflow
+
+## Action
+
+Follow the workflow: identify the helper, create a new test file in 'test/', write focused unit tests, ensure no existing files are modified, verify tests pass, commit with a descriptive message
+
+## Evidence
+
+- Workflow: add-unit-test-for-helper
+- Commits: test: add unit tests for estimateTokenLength
+
+---
+id: chatgpt-next-web-instinct-document-env-var-workflow
+trigger: "When someone wants to document an environment variable used in the codebase but missing from .env.template"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Document Env Var Workflow
+
+## Action
+
+Add the variable to .env.template with a descriptive comment, ensure consistency with other docs, and commit the change
+
+## Evidence
+
+- Workflow: document-env-var-in-template
+- Commits: docs: document DEEPSEEK_URL in .env.template
+
+---
+id: chatgpt-next-web-instinct-merge-additive-pr-workflow
+trigger: "When someone wants to merge a PR that adds a new test or documentation entry"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: WangNingkai/ChatGPT-Next-Web
+---
+
+# Chatgpt Next Web Instinct Merge Additive Pr Workflow
+
+## Action
+
+Review the PR for a new, focused test or documentation addition, ensure only the new file is added (except .env.template for docs), and merge with a summary message
+
+## Evidence
+
+- Workflow: merge-pull-request-for-additive-test-or-doc
+- Commits: Merge pull request #6815 from TIANQIAN1238/feat-utils-unit-tests
+
